@@ -37,7 +37,37 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findById("66795c238e0e8b83e5ce73fa")
+// Movie.findById("66795c238e0e8b83e5ce73fa")
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// Update One
+// Movie.updateOne({ title: 'Parasite' }, { rating: 7.0 })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// Update Many
+// Movie.updateMany({ year: { $lt: 2019 } }, { rating: 8 })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+Movie.findByIdAndUpdate(
+  "66795a983a48e45d57cb34f1",
+  { rating: 10 },
+  { new: true }
+)
   .then((result) => {
     console.log(result);
   })
