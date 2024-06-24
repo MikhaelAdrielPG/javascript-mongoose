@@ -63,11 +63,28 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findByIdAndUpdate(
-  "66795a983a48e45d57cb34f1",
-  { rating: 10 },
-  { new: true }
-)
+// Movie.findByIdAndUpdate(
+//   "66795a983a48e45d57cb34f1",
+//   { rating: 10 },
+//   { new: true }
+// )
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// Delete
+// Movie.deleteOne({ title: "Avengers: Infinity War" })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+Movie.findByIdAndDelete("66795bc1080ef856821031b3")
   .then((result) => {
     console.log(result);
   })
