@@ -18,11 +18,32 @@ personSchema.virtual("fullName").get(function () {
   return `${this.firstName} ${this.lastName}`;
 });
 
+personSchema.pre("save", async function () {
+  this.firstName = "Luna";
+  this.lastName = "Lovegood";
+  console.log("persiapan menyimpan data");
+});
+
+personSchema.post("save", async function () {
+  console.log("data berhasil di simpan");
+});
+
 const Person = mongoose.model("Person", personSchema);
 
 const person = new Person({
-  firstName: "Harry",
-  lastName: "Potter",
+  firstName: "Ron",
+  lastName: "Weasley",
 });
 
-console.log(person.fullName);
+// console.log(person.fullName);
+
+console.log(person);
+
+person
+  .save()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
