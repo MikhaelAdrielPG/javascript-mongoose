@@ -84,13 +84,13 @@ const Movie = mongoose.model("Movie", movieSchema);
 //     console.log(err);
 //   });
 
-Movie.findByIdAndDelete("66795bc1080ef856821031b3")
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// Movie.findByIdAndDelete("66795bc1080ef856821031b3")
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 // const movie = new Movie({
 //   title: "Black Panther",
