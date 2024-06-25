@@ -46,7 +46,7 @@ const productSchema = mongoose.Schema({
   stock: {
     type: Number,
     required: true,
-    min: 0,
+    min: [0, "Nilai tidak boleh minus."],
   },
   availability: {
     online: {
@@ -92,13 +92,13 @@ Product.findOneAndUpdate(
   {
     name: "Kemeja Flanel",
     brand: "Hollister",
-    price: -150000,
+    price: 150000,
     color: "biru muda",
     size: ["S", "M", "L"],
     description:
       "Kemeja flanel dengan warna yang cerah, terbuat dari bahan flanel yang nyaman dan berkualitas tinggi.",
     condition: "baru",
-    stock: 10,
+    stock: -10,
     availability: {
       online: true,
       offline: true,
